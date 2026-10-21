@@ -1,0 +1,78 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Scanline Pattern -->
+    <pattern id="scanlines" x="0" y="0" width="100%" height="4" patternUnits="userSpaceOnUse">
+      <rect width="100%" height="1" fill="rgba(0, 255, 0, 0.1)" />
+      <rect y="2" width="100%" height="1" fill="rgba(0, 255, 0, 0.05)" />
+    </pattern>
+    
+    <!-- Amber Glow -->
+    <filter id="amberGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur" />
+      <feFlood flood-color="#ffb000" result="color" />
+      <feComposite in="color" in2="blur" operator="in" result="glow" />
+      <feMerge>
+        <rt>in</rt>
+        <rt>glow</rt>
+      </feMerge>
+    </filter>
+    
+    <!-- Green Glow -->
+    <filter id="greenGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur" />
+      <feFlood flood-color="#00ff41" result="color" />
+      <feComposite in="color" in2="blur" operator="in" result="glow" />
+      <feMerge>
+        <rt>in</rt>
+        <rt>glow</rt>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="#0a0a0a" />
+  <rect width="800" height="450" fill="url(#scanlines)" />
+  
+  <!-- Border Frame -->
+  <rect x="10" y="10" width="780" height="430" fill="none" stroke="#00ff41" stroke-width="2" opacity="0.6" />
+  
+  <!-- Header -->
+  <text x="30" y="45" font-family="monospace" font-size="18" fill="#00ff41" font-weight="bold">[ SYSTEM_INVENTORY_v2.04 ]</text>
+  <line x1="30" y1="60" x2="250" y2="60" stroke="#00ff41" stroke-width="1" />
+  
+  <!-- Grid Layout -->
+  <g transform="translate(30, 80)">
+    <!-- Item 1 -->
+    <rect x="0" y="0" width="740" height="40" fill="none" stroke="#00ff41" stroke-opacity="0.3" />
+    <text x="10" y="25" font-family="monospace" font-size="14" fill="#00ff41">001_CORE_CELL_B | DUR: 88% | STATUS: [STABLE]</text>
+    
+    <!-- Item 2 -->
+    <rect x="0" y="60" width="740" height="40" fill="none" stroke="#00ff41" stroke-opacity="0.3" />
+    <text x="10" y="85" font-family="monospace" font-size="14" fill="#ffb000" filter="url(#amberGlow)">042_FUEL_CAN_X | DUR: 12% | STATUS: [CRITICAL]</text>
+    
+    <!-- Item 3 -->
+    <rect x="0" y="120" width="740" height="40" fill="none" stroke="#00ff41" stroke-opacity="0.3" />
+    <text x="10" y="145" font-family="monospace" font-size="14" fill="#00ff41">109_SCRAP_METAL | DUR: 100% | STATUS: [STABLE]</text>
+    
+    <!-- Item 4 -->
+    <rect x="0" y="180" width="740" height="40" fill="none" stroke="#00ff41" stroke-opacity="0.3" />
+    <text x="10" y="205" font-family="monospace" font-size="14" fill="#00ff41">212_OXYGEN_TANK | DUR: 45% | STATUS: [WARNING]</text>
+    
+    <!-- Item 5 -->
+    <rect x="0" y="240" width="740" height="40" fill="none" stroke="#00ff41" stroke-opacity="0.3" />
+    <text x="10" y="265" font-family="monospace" font-size="14" fill="#00ff41">088_REPAIR_KIT | DUR: 90% | STATUS: [STABLE]</text>
+    
+    <!-- Item 6 -->
+    <rect x="0" y="300" width="740" height="40" fill="none" stroke="#00ff41" stroke-opacity="0.3" />
+    <text x="10" y="325" font-family="monospace" font-size="14" fill="#00ff41">901_DATA_PAD | DUR: 100% | STATUS: [STABLE]</text>
+    
+    <!-- Footer Info -->
+    <text x="10" y="420" font-family="monospace" font-size="10" fill="#00ff41">TOTAL_WEIGHT: 45.2kg | UNITS_REMAINING: 06/12</text>
+  </g>
+
+  <!-- Decorative Corner Accents -->
+  <path d="M10,10 L30,10 L10,30 Z" fill="#00ff41" />
+  <path d="M770,10 L790,10 L770,30 Z" fill="#00ff41" />
+  <path d="M10,420 L10,440 L30,420 Z" fill="#00ff41" />
+  <path d="M770,420 L770,440 L790,420 Z" fill="#00ff41" />
+</svg>
